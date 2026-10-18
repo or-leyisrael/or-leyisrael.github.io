@@ -3,22 +3,22 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>הילולת השיעור · אור לישראל</title>
+<title>הילולת השיעור · אור ישראלי</title>
 <meta name="description" content="הילולת השיעור וחגיגת יום ההולדת לרב שניר שיטרית שליט״א, בנוכחות הרב יוסף חיים בצרי שליט״א. יום חמישי כ״ו בחשוון, 05.11, 19:30, בית כנסת שבטי ישראל.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="הילולת השיעור · וחגיגת יום ההולדת לרב שניר שיטרית">
 <meta property="og:description" content="בנוכחות הרב יוסף חיים בצרי שליט״א · יום חמישי כ״ו בחשוון · 05.11 · 19:30 · בית כנסת שבטי ישראל">
 <meta property="og:url" content="https://or-leyisrael.github.io/">
-<meta property="og:site_name" content="קהילת אור לישראל">
+<meta property="og:site_name" content="קהילת אור ישראלי">
 <meta property="og:locale" content="he_IL">
-<meta property="og:image" content="https://or-leyisrael.github.io/media/og-share2.jpg">
-<meta property="og:image:secure_url" content="https://or-leyisrael.github.io/media/og-share2.jpg">
+<meta property="og:image" content="https://or-leyisrael.github.io/media/og-share3.jpg">
+<meta property="og:image:secure_url" content="https://or-leyisrael.github.io/media/og-share3.jpg">
 <meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:alt" content="הילולת השיעור · הרב שניר שיטרית והרב יוסף חיים בצרי">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://or-leyisrael.github.io/media/og-share2.jpg">
+<meta name="twitter:image" content="https://or-leyisrael.github.io/media/og-share3.jpg">
 <meta name="theme-color" content="#fdfbf6">
 <style>html,body{margin:0}img{max-width:100%}[hidden]{display:none!important}:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}</style>
 
@@ -173,7 +173,7 @@ section{margin-top:56px}
 .honour .rule{margin-top:20px}
 
 /* countdown */
-.count{display:grid;grid-template-columns:repeat(4,1fr);text-align:center;border-block:1px solid var(--line)}
+.count{direction:ltr;display:grid;grid-template-columns:repeat(4,1fr);text-align:center;border-block:1px solid var(--line)}
 .count div{padding-block:16px 12px}
 .count div + div{border-inline-start:1px solid var(--line-soft)}
 .count b{display:block;font-family:var(--f-display);font-size:38px;font-weight:300;line-height:1;color:var(--gold-deep);font-variant-numeric:tabular-nums}
@@ -265,9 +265,33 @@ footer .q small{display:block;font-family:var(--f-body);font-size:13px;color:var
 footer .btn{margin-top:22px}
 
 /* scroll reveal (only once JS confirms it can reveal) */
-.can-rv .rv{opacity:0;transform:translateY(22px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}
+.can-rv .rv{opacity:0;transform:translateY(34px) scale(.985);transition:opacity 1.2s cubic-bezier(.16,.84,.24,1),transform 1.2s cubic-bezier(.16,.84,.24,1)}
 .can-rv .rv.in{opacity:1;transform:none}
-@media (prefers-reduced-motion:reduce){.can-rv .rv{opacity:1;transform:none;transition:none}}
+/* images open like a curtain and settle from a slight zoom */
+.can-rv .rv-img{clip-path:inset(0 0 100% 0);transition:clip-path 1.4s cubic-bezier(.76,0,.24,1)}
+.can-rv .rv-img img,.can-rv .rv-img video{transform:scale(1.18);transition:transform 2s cubic-bezier(.16,.84,.24,1)}
+.can-rv .rv-img.in{clip-path:inset(0 0 0 0)}
+.can-rv .rv-img.in img,.can-rv .rv-img.in video{transform:none}
+/* gold rules draw outward */
+.can-rv .rule::before,.can-rv .rule::after{flex-basis:0;transition:flex-basis 1.3s cubic-bezier(.16,.84,.24,1) .15s}
+.can-rv .rule.in::before,.can-rv .rule.in::after{flex-basis:70px}
+.can-rv .rule svg{transform:rotate(-90deg) scale(.2);opacity:0;transition:transform .9s cubic-bezier(.16,.84,.24,1),opacity .6s}
+.can-rv .rule.in svg{transform:none;opacity:1}
+/* programme icons turn into place */
+.can-rv .mi .mi-ic{transform:rotate(0deg) scale(.5);opacity:0;transition:transform 1.1s cubic-bezier(.16,.84,.24,1) .2s,opacity .8s .2s}
+.can-rv .mi.in .mi-ic{transform:rotate(45deg) scale(1);opacity:1}
+.can-rv .mi h3,.can-rv .mi p{opacity:0;transform:translateY(12px);transition:opacity 1s .35s,transform 1s cubic-bezier(.16,.84,.24,1) .35s}
+.can-rv .mi p{transition-delay:.5s}
+.can-rv .mi.in h3,.can-rv .mi.in p{opacity:1;transform:none}
+/* countdown numbers rise one after another */
+.can-rv .count b{opacity:0;transform:translateY(16px);transition:opacity .8s,transform .9s cubic-bezier(.16,.84,.24,1)}
+.can-rv .in .count b,.can-rv .count.in b{opacity:1;transform:none}
+.can-rv .count div:nth-child(2) b{transition-delay:.1s}.can-rv .count div:nth-child(3) b{transition-delay:.2s}.can-rv .count div:nth-child(4) b{transition-delay:.3s}
+@media (prefers-reduced-motion:reduce){
+  .can-rv .rv,.can-rv .rv-img,.can-rv .rv-img img,.can-rv .rv-img video,.can-rv .rule svg,.can-rv .mi .mi-ic,.can-rv .mi h3,.can-rv .mi p,.can-rv .count b{opacity:1;transform:none;clip-path:none;transition:none}
+  .can-rv .mi .mi-ic{transform:rotate(45deg)}
+  .can-rv .rule::before,.can-rv .rule::after{flex-basis:70px;transition:none}
+}
 
 /* load sequence */
 .rise{animation:rise 1s cubic-bezier(.2,.7,.2,1) both}
@@ -296,11 +320,11 @@ footer .btn{margin-top:22px}
       <div class="hero-veil" aria-hidden="true"></div>
       <canvas id="sparks" aria-hidden="true"></canvas>
       <div class="topbar">
-        <img class="lg-or" src="media/logo-or-leyisrael.png" alt="אור לישראל, תנועת נוער בערכי היהדות" width="900" height="505">
+        <img class="lg-or" src="media/logo-or-leyisrael.png" alt="אור ישראלי, תנועת נוער בערכי היהדות" width="900" height="505">
         <div class="bsd">בס״ד</div>
         <img class="lg-vaad" src="media/logo-vaad.png" alt="הוועד המסורתי עומר" width="600" height="653">
       </div>
-      <div class="caps rise">קהילת אור לישראל · בית כנסת שבטי ישראל</div>
+      <div class="caps rise">קהילת אור ישראלי</div>
       <h1 class="title foil rise d1">הילולת השיעור</h1>
       <div class="duo rise d2">
         <figure>
@@ -318,7 +342,7 @@ footer .btn{margin-top:22px}
         <div class="day">05.11<span>נובמבר</span></div>
         <div class="side">בשעה<b>19:30</b>בערב</div>
       </div>
-      <p class="place rise d4"><b>בית כנסת שבטי ישראל</b> · עומר</p>
+      <p class="place rise d4">בבית הכנסת <b>שבטי ישראל</b> · רחוב ליבנה, עומר</p>
 
     </div>
   </header>
@@ -362,7 +386,7 @@ footer .btn{margin-top:22px}
           <h3>חגיגת יום ההולדת לרב שניר</h3>
           <p>ברכות, שירה ושמחה עם כל תלמידי השיעור</p>
         </div>
-        <p class="menu-end">בית כנסת שבטי ישראל · קהילת אור לישראל</p>
+        <p class="menu-end">בבית הכנסת שבטי ישראל · רחוב ליבנה, עומר</p>
       </div>
     </div>
   </section>
@@ -373,14 +397,14 @@ footer .btn{margin-top:22px}
       <h2 id="h-prev">מהערב הקודם</h2>
       <div class="rule" aria-hidden="true"><svg><use href="#lozenge"/></svg></div>
     </div>
-    <div class="rv vids">
-      <div class="vid"><div class="box"><video src="media/dance1.mp4?v=2" poster="media/dance1.jpg?v=2" autoplay muted loop playsinline preload="metadata"></video><button type="button" class="js-sound" aria-label="הפעלת קול"></button></div></div>
-      <div class="vid"><div class="box"><video src="media/dance2.mp4?v=2" poster="media/dance2.jpg?v=2" autoplay muted loop playsinline preload="metadata"></video><button type="button" class="js-sound" aria-label="הפעלת קול"></button></div></div>
+    <div class="vids" data-stagger>
+      <div class="vid rv-img"><div class="box"><video src="media/dance1.mp4?v=2" poster="media/dance1.jpg?v=2" autoplay muted loop playsinline preload="metadata"></video><button type="button" class="js-sound" aria-label="הפעלת קול"></button></div></div>
+      <div class="vid rv-img"><div class="box"><video src="media/dance2.mp4?v=2" poster="media/dance2.jpg?v=2" autoplay muted loop playsinline preload="metadata"></video><button type="button" class="js-sound" aria-label="הפעלת קול"></button></div></div>
     </div>
-    <div class="rv photos">
-      <figure class="wide"><div><img src="media/hall.jpg?v=2" alt="האולם מלא בקהל סביב השולחנות" loading="lazy"></div></figure>
-      <figure><div><img src="media/rav.jpg?v=2" alt="הרב עומד ומדבר אל הקהל" loading="lazy"></div></figure>
-      <figure><div><img src="media/table.jpg?v=2" alt="שולחן הרבנים ערוך לסעודה" loading="lazy"></div></figure>
+    <div class="photos" data-stagger>
+      <figure class="rv-img wide"><div><img src="media/hall.jpg?v=2" alt="האולם מלא בקהל סביב השולחנות" loading="lazy"></div></figure>
+      <figure class="rv-img"><div><img src="media/rav.jpg?v=2" alt="הרב עומד ומדבר אל הקהל" loading="lazy"></div></figure>
+      <figure class="rv-img"><div><img src="media/table.jpg?v=2" alt="שולחן הרבנים ערוך לסעודה" loading="lazy"></div></figure>
     </div>
   </section>
 
@@ -454,10 +478,10 @@ footer .btn{margin-top:22px}
       <h2 id="h-place">איך מגיעים</h2>
       <div class="rule" aria-hidden="true"><svg><use href="#lozenge"/></svg></div>
     </div>
-    <p class="addr">בית כנסת שבטי ישראל<small>עומר · יום חמישי 05.11 · 19:30</small></p>
+    <p class="addr">בית הכנסת שבטי ישראל<small>רחוב ליבנה, עומר · יום חמישי 05.11 · 19:30</small></p>
     <div class="links">
-      <a class="btn btn-gold wide" href="https://waze.com/ul?q=%D7%91%D7%99%D7%AA%20%D7%9B%D7%A0%D7%A1%D7%AA%20%D7%A9%D7%91%D7%98%D7%99%20%D7%99%D7%A9%D7%A8%D7%90%D7%9C%20%D7%A2%D7%95%D7%9E%D7%A8&navigate=yes" target="_blank" rel="noopener">ניווט ב-Waze</a>
-      <a class="btn btn-line" href="https://www.google.com/maps/search/?api=1&query=%D7%91%D7%99%D7%AA%20%D7%9B%D7%A0%D7%A1%D7%AA%20%D7%A9%D7%91%D7%98%D7%99%20%D7%99%D7%A9%D7%A8%D7%90%D7%9C%20%D7%A2%D7%95%D7%9E%D7%A8" target="_blank" rel="noopener">Google Maps</a>
+      <a class="btn btn-gold wide" href="https://waze.com/ul?q=%D7%91%D7%99%D7%AA%20%D7%9B%D7%A0%D7%A1%D7%AA%20%D7%A9%D7%91%D7%98%D7%99%20%D7%99%D7%A9%D7%A8%D7%90%D7%9C%20%D7%9C%D7%99%D7%91%D7%A0%D7%94%20%D7%A2%D7%95%D7%9E%D7%A8&navigate=yes" target="_blank" rel="noopener">ניווט ב-Waze</a>
+      <a class="btn btn-line" href="https://www.google.com/maps/search/?api=1&query=%D7%91%D7%99%D7%AA%20%D7%9B%D7%A0%D7%A1%D7%AA%20%D7%A9%D7%91%D7%98%D7%99%20%D7%99%D7%A9%D7%A8%D7%90%D7%9C%20%D7%9C%D7%99%D7%91%D7%A0%D7%94%20%D7%A2%D7%95%D7%9E%D7%A8" target="_blank" rel="noopener">Google Maps</a>
       <a class="btn btn-line" id="cal" href="#" target="_blank" rel="noopener">הוספה ליומן</a>
     </div>
   </section>
@@ -485,7 +509,7 @@ footer .btn{margin-top:22px}
     + "&text=" + encodeURIComponent("הילולת השיעור ויום הולדת לרב שניר שיטרית")
     + "&dates=20261105T193000/20261105T230000&ctz=Asia/Jerusalem"
     + "&details=" + encodeURIComponent("הילולה לכבוד השיעור וחגיגת יום הולדת לרב שניר שיטרית שליט״א, בנוכחות הרב יוסף חיים בצרי שליט״א. דבר תורה, פייטן וקלידן וסעודה חגיגית.")
-    + "&location=" + encodeURIComponent("בית כנסת שבטי ישראל, עומר");
+    + "&location=" + encodeURIComponent("בית כנסת שבטי ישראל, רחוב ליבנה, עומר");
 
   var shareText = "הילולת השיעור ✨\nוחגיגת יום הולדת לרב שניר שיטרית שליט״א\nבנוכחות אורח הכבוד הרב יוסף חיים בצרי שליט״א\n\nיום חמישי כ״ו בחשוון · 05.11 · 19:30\nבית כנסת שבטי ישראל, עומר\nדבר תורה · פייטן וקלידן · סעודה חגיגית"
     + "\n\nפרטים והרשמה:\n" + PAGE_URL;
@@ -550,15 +574,21 @@ footer .btn{margin-top:22px}
   var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   var hasIO = "IntersectionObserver" in window;
 
-  // Scroll reveal: hide only after JS is running, show each block once it enters view
+  // Scroll reveal: hidden states apply only once JS runs; each block animates as it enters
   if (hasIO && !reduce) {
     document.documentElement.classList.add("can-rv");
-    var rvs = Array.prototype.slice.call(document.querySelectorAll(".rv"));
     var ro = new IntersectionObserver(function(es){
-      es.forEach(function(e){ if (e.isIntersecting) { e.target.classList.add("in"); ro.unobserve(e.target); } });
-    }, {rootMargin:"0px 0px -8% 0px", threshold:0.01});
-    rvs.forEach(function(el){ ro.observe(el); });
-    setTimeout(function(){ rvs.forEach(function(el){ el.classList.add("in"); }); }, 6000);
+      es.forEach(function(e){
+        if (!e.isIntersecting) return;
+        var el = e.target;
+        el.classList.add("in");
+        if (el.hasAttribute("data-stagger")) {
+          Array.prototype.forEach.call(el.children, function(c, i){ c.style.transitionDelay = (i*0.16) + "s"; c.classList.add("in"); });
+        }
+        ro.unobserve(el);
+      });
+    }, {rootMargin:"0px 0px -12% 0px", threshold:0.01});
+    document.querySelectorAll(".rv, .rule, [data-stagger]").forEach(function(el){ ro.observe(el); });
   }
 
   // Play videos only while on screen
