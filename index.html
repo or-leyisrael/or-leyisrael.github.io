@@ -128,6 +128,19 @@ section{margin-top:56px}
 .more h4{font-size:20px}
 .more span{font-size:14px;color:var(--ink-mute);text-align:left}
 
+/* hero: the two rabbis side by side */
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:24px auto 0;max-width:440px;align-items:start}
+.duo figure{margin:0;min-width:0}
+.duo .arch{width:100%;margin:0}
+.duo .arch::after{height:50%}
+.duo .arch-in{aspect-ratio:3/5}
+.duo .arch-in img.wide{width:168%;left:50%;transform:translateX(-50%)}
+.duo figcaption{margin-top:14px;display:grid;gap:2px}
+.duo figcaption .caps{font-size:10px;letter-spacing:.2em}
+.duo .nm{font-family:var(--f-display);font-size:clamp(19px,5.2vw,25px);font-weight:700;line-height:1.2;margin-top:4px;color:var(--ink)}
+.duo figcaption small{font-size:11px;letter-spacing:.28em;color:var(--gold-deep);font-weight:600}
+.duo + .when{margin-top:26px}
+
 /* hero portrait of Rav Snir */
 .arch.arch-sm{width:min(200px,56%);margin:22px auto 0}
 .arch-sm::after{height:55%}
@@ -146,7 +159,7 @@ section{margin-top:56px}
 .arch-in::before{content:"";position:absolute;inset:0;background:repeating-conic-gradient(from 0deg at 50% 40%,rgba(255,255,255,.22) 0 6deg,transparent 6deg 18deg);opacity:.7}
 .arch-in img{position:absolute;bottom:0;left:50%;width:118%;max-width:none;transform:translateX(-50%);height:auto;
   -webkit-mask-image:linear-gradient(180deg,#000 78%,transparent 100%);mask-image:linear-gradient(180deg,#000 78%,transparent 100%)}
-.plate{position:relative;margin:-26px auto 0;width:min(420px,100%);background:var(--paper);border:1px solid var(--line);padding:18px 16px 16px;box-shadow:0 14px 36px rgba(125,92,30,.14)}
+.plate{position:relative;margin:18px auto 0;width:min(420px,100%);background:var(--paper);border:1px solid var(--line);padding:18px 16px 16px;box-shadow:0 14px 36px rgba(125,92,30,.14)}
 .plate::before{content:"";position:absolute;inset:4px;border:1px solid var(--line-soft);pointer-events:none}
 .plate h2{font-size:clamp(30px,8.4vw,42px);font-weight:700;line-height:1.15;margin-top:4px}
 .plate small{display:block;font-size:13px;letter-spacing:.3em;color:var(--gold-deep);font-weight:600;margin-top:2px}
@@ -250,14 +263,15 @@ footer .btn{margin-top:22px}
       <div class="bsd">בס״ד</div>
       <div class="caps rise">קהילת אור לישראל · בית כנסת שבטי ישראל</div>
       <h1 class="title foil rise d1">הילולת השיעור</h1>
-      <div class="arch arch-sm rise d2"><div class="arch-in"><img class="fit" src="media/snir.webp" alt="הרב שניר שיטרית שליט״א" width="305" height="548"></div></div>
-      <p class="sub rise d2">וחגיגת יום ההולדת<br>לרב <b>שניר שיטרית</b><small>שליט״א</small></p>
-
-      <div class="rule rise d3" aria-hidden="true"><svg><use href="#lozenge"/></svg></div>
-
-      <div class="guest rise d3">
-        <span class="caps">בנוכחות אורח הכבוד</span>
-        <div class="name foil">הרב יוסף חיים בצרי<small>שליט״א</small></div>
+      <div class="duo rise d2">
+        <figure>
+          <div class="arch"><div class="arch-in"><img class="fit" src="media/snir.webp" alt="הרב שניר שיטרית שליט״א" width="305" height="548"></div></div>
+          <figcaption><span class="caps">וחגיגת יום ההולדת</span><span class="nm">הרב שניר שיטרית</span><small>שליט״א</small></figcaption>
+        </figure>
+        <figure>
+          <div class="arch"><div class="arch-in"><img class="wide" src="media/batzri.webp?v=2" alt="הרב יוסף חיים בצרי שליט״א" width="1100" height="983"></div></div>
+          <figcaption><span class="caps">בנוכחות אורח הכבוד</span><span class="nm">הרב יוסף חיים בצרי</span><small>שליט״א</small></figcaption>
+        </figure>
       </div>
 
       <div class="when rise d4">
@@ -303,11 +317,6 @@ footer .btn{margin-top:22px}
 
   <section class="honour rv" aria-labelledby="h-honour">
     <span class="caps">ביקור מיוחד בקהילה</span>
-    <div class="arch">
-      <div class="arch-in">
-        <img src="media/batzri.webp?v=2" alt="הרב יוסף חיים בצרי שליט״א" width="700" height="625">
-      </div>
-    </div>
     <div class="plate">
       <span class="caps">אורח הכבוד</span>
       <h2 id="h-honour" class="foil">הרב יוסף חיים בצרי</h2>
