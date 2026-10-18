@@ -217,13 +217,12 @@ section{margin-top:56px}
 .done:focus{outline:none}
 #reg-form .btn{width:100%;margin-top:18px}
 
-/* organisers */
-.orgs .head{margin-bottom:18px}
-.logos{display:flex;align-items:center;justify-content:center;gap:26px}
-.logos img{height:auto;min-width:0}
-.logos img:first-child{width:min(230px,52%)}
-.logos img:last-child{width:min(124px,28%)}
-.logos .sep{width:1px;align-self:stretch;background:var(--line);min-height:60px}
+/* organisers' logos in the hero's top corners */
+.topbar{display:grid;grid-template-columns:1fr auto 1fr;align-items:start;gap:10px}
+.topbar .bsd{text-align:center;padding-top:2px}
+.topbar img{height:auto;display:block}
+.lg-or{width:min(120px,100%);justify-self:start}
+.lg-vaad{width:min(62px,60%);justify-self:end}
 
 /* place */
 .addr{text-align:center;font-family:var(--f-display);font-size:24px;line-height:1.3}
@@ -268,7 +267,11 @@ footer .btn{margin-top:22px}
       <div class="hero-photo" aria-hidden="true"></div>
       <div class="hero-veil" aria-hidden="true"></div>
       <canvas id="sparks" aria-hidden="true"></canvas>
-      <div class="bsd">בס״ד</div>
+      <div class="topbar">
+        <img class="lg-or" src="media/logo-or-leyisrael.png" alt="אור לישראל, תנועת נוער בערכי היהדות" width="900" height="505">
+        <div class="bsd">בס״ד</div>
+        <img class="lg-vaad" src="media/logo-vaad.png" alt="הוועד המסורתי עומר" width="600" height="653">
+      </div>
       <div class="caps rise">קהילת אור לישראל · בית כנסת שבטי ישראל</div>
       <h1 class="title foil rise d1">הילולת השיעור</h1>
       <div class="duo rise d2">
@@ -421,18 +424,6 @@ footer .btn{margin-top:22px}
       <a class="btn btn-gold wide" href="https://waze.com/ul?q=%D7%91%D7%99%D7%AA%20%D7%9B%D7%A0%D7%A1%D7%AA%20%D7%A9%D7%91%D7%98%D7%99%20%D7%99%D7%A9%D7%A8%D7%90%D7%9C%20%D7%A2%D7%95%D7%9E%D7%A8&navigate=yes" target="_blank" rel="noopener">ניווט ב-Waze</a>
       <a class="btn btn-line" href="https://www.google.com/maps/search/?api=1&query=%D7%91%D7%99%D7%AA%20%D7%9B%D7%A0%D7%A1%D7%AA%20%D7%A9%D7%91%D7%98%D7%99%20%D7%99%D7%A9%D7%A8%D7%90%D7%9C%20%D7%A2%D7%95%D7%9E%D7%A8" target="_blank" rel="noopener">Google Maps</a>
       <a class="btn btn-line" id="cal" href="#" target="_blank" rel="noopener">הוספה ליומן</a>
-    </div>
-  </section>
-
-  <section class="orgs rv" aria-labelledby="h-orgs">
-    <div class="head">
-      <div class="caps" id="h-orgs">מארגני הערב</div>
-      <div class="rule" aria-hidden="true"><svg><use href="#lozenge"/></svg></div>
-    </div>
-    <div class="logos">
-      <img src="media/logo-or-leyisrael.png" alt="אור לישראל, תנועת נוער בערכי היהדות" width="900" height="505">
-      <span class="sep" aria-hidden="true"></span>
-      <img src="media/logo-vaad.png" alt="הוועד המסורתי עומר" width="600" height="653">
     </div>
   </section>
 
