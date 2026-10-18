@@ -141,6 +141,9 @@ section{margin-top:56px}
 .duo .arch::after{height:50%}
 .duo .arch-in{aspect-ratio:3/5}
 .duo .arch-in img.wide{width:131%;left:50%;transform:translateX(-50%)}
+.duo .role-top{display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:14px;min-height:2.6em}
+.duo .role-top span{font-family:var(--f-display);font-weight:700;font-size:clamp(15px,4.4vw,20px);line-height:1.25;color:var(--gold-deep);text-wrap:balance;padding:7px 14px;border:1px solid var(--gold);background:linear-gradient(180deg,#fffaf0,var(--champagne));box-shadow:0 6px 16px rgba(125,92,30,.14)}
+.duo .role-top::before,.duo .role-top::after{content:"";flex:none;width:6px;height:6px;background:var(--gold);transform:rotate(45deg)}
 .duo figcaption{margin-top:14px;display:grid;gap:2px}
 .duo figcaption .caps{font-size:10px;letter-spacing:.2em}
 .duo .nm{font-family:var(--f-display);font-size:clamp(19px,5.2vw,25px);font-weight:700;line-height:1.2;margin-top:4px;color:var(--ink)}
@@ -328,12 +331,14 @@ footer .btn{margin-top:22px}
       <h1 class="title foil rise d1">ערב הוקרה לשיעור</h1>
       <div class="duo rise d2">
         <figure>
+          <div class="role-top"><span>וחגיגת יום ההולדת</span></div>
           <div class="arch"><div class="arch-in"><img class="fit" src="media/snir.webp" alt="הרב שניר שיטרית שליט״א" width="305" height="548"></div></div>
-          <figcaption><span class="caps">וחגיגת יום ההולדת</span><span class="nm">הרב שניר שיטרית</span><small>שליט״א</small></figcaption>
+          <figcaption><span class="nm">הרב שניר שיטרית</span><small>שליט״א</small></figcaption>
         </figure>
         <figure>
+          <div class="role-top"><span>בנוכחות אורח הכבוד</span></div>
           <div class="arch"><div class="arch-in"><img class="wide" src="media/batzri2.webp" alt="הרב יוסף חיים בצרי שליט״א" width="540" height="640"></div></div>
-          <figcaption><span class="caps">בנוכחות אורח הכבוד</span><span class="nm">הרב יוסף חיים בצרי</span><small>שליט״א</small></figcaption>
+          <figcaption><span class="nm">הרב יוסף חיים בצרי</span><small>שליט״א</small></figcaption>
         </figure>
       </div>
 
