@@ -217,6 +217,24 @@ section{margin-top:56px}
 .done:focus{outline:none}
 #reg-form .btn{width:100%;margin-top:18px}
 
+/* what awaits: an engraved programme card */
+.menu .frame-in{padding:30px 20px 28px;text-align:center;background:
+  radial-gradient(90% 40% at 50% 0%,rgba(244,234,211,.7),transparent 70%),var(--paper)}
+.menu-top{display:block;margin-bottom:6px}
+.mi{display:grid;justify-items:center;gap:8px;padding-block:18px}
+.mi-ic{width:54px;height:54px;border:1px solid var(--gold);transform:rotate(45deg);display:grid;place-items:center;background:linear-gradient(135deg,#fffaf0,var(--champagne));box-shadow:0 6px 18px rgba(125,92,30,.14)}
+.mi-ic svg{width:30px;height:30px;color:var(--gold-deep);transform:rotate(-45deg)}
+.mi h3{font-size:clamp(24px,6.6vw,30px);font-weight:700;margin-top:10px;line-height:1.2}
+.mi p{font-size:16px;color:var(--ink-soft);max-width:36ch;text-wrap:balance;line-height:1.6}
+.mi-lead h3{font-size:13px;letter-spacing:.3em;font-family:var(--f-body);font-weight:600;color:var(--gold-deep)}
+.mi-lead p{font-size:17px}
+.mi-lead p b{display:block;font-family:var(--f-display);font-size:clamp(26px,7.4vw,34px);font-weight:700;line-height:1.2;margin-bottom:6px}
+.mi-sep{display:flex;align-items:center;justify-content:center;gap:10px;color:var(--gold)}
+.mi-sep::before,.mi-sep::after{content:"";width:46px;height:1px;background:var(--line)}
+.mi-sep svg{width:8px;height:8px}
+.menu-end{margin-top:10px;padding-top:18px;border-top:1px solid var(--line-soft);font-family:var(--f-display);font-size:16px;color:var(--gold-deep)}
+.vids + .photos{margin-top:10px}
+
 /* organisers' logos in the hero's top corners */
 .topbar{display:grid;grid-template-columns:1fr auto 1fr;align-items:start;gap:10px}
 .topbar .bsd{text-align:center;padding-top:2px}
@@ -301,40 +319,59 @@ footer .btn{margin-top:22px}
       <h2 id="h-prog">ערב של שמחה</h2>
       <div class="rule" aria-hidden="true"><svg><use href="#lozenge"/></svg></div>
     </div>
-    <div class="rv feats">
-      <div class="feat"><div>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M6 11a6 6 0 0 0 12 0M12 17v4M9 21h6"/></svg>
-        <h3>פייטן וקלידן</h3>
-        <p>שירה, פיוטים וריקודים לאורך כל הערב</p>
-      </div></div>
-      <div class="feat"><div>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"><path d="M4 13h16a8 8 0 0 1-16 0zM12 5v2M8 7.5l.8 1.5M16 7.5l-.8 1.5"/><path d="M3 20h18"/></svg>
-        <h3>סעודה חגיגית</h3>
-        <p>שולחנות ערוכים לכל הקהל</p>
-      </div></div>
+    <div class="menu frame">
+      <svg class="corner tl"><use href="#corner"/></svg><svg class="corner tr"><use href="#corner"/></svg><svg class="corner bl"><use href="#corner"/></svg><svg class="corner br"><use href="#corner"/></svg>
+      <div class="frame-in">
+        <p class="menu-top caps">יום חמישי · כ״ו בחשוון · 05.11 · מ-19:30</p>
+        <div class="mi mi-lead rv">
+          <div class="mi-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5l8.2 14.2H3.8z"/><path d="M12 21.5L3.8 7.3h16.4z"/></svg></div>
+          <h3>ביקורו של אורח הכבוד</h3>
+          <p><b class="foil">הרב יוסף חיים בצרי שליט״א</b> יכבד את הערב בנוכחותו. זכות גדולה לקהילה ולתלמידי השיעור.</p>
+        </div>
+        <div class="mi-sep" aria-hidden="true"><svg><use href="#lozenge"/></svg></div>
+        <div class="mi rv">
+          <div class="mi-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 6c-2-1.5-5-2-8-1.5v13c3-.5 6 0 8 1.5 2-1.5 5-2 8-1.5v-13c-3-.5-6 0-8 1.5zM12 6v13"/></svg></div>
+          <h3>דבר תורה</h3>
+          <p>דברי תורה לכבוד השיעור והקהילה</p>
+        </div>
+        <div class="mi-sep" aria-hidden="true"><svg><use href="#lozenge"/></svg></div>
+        <div class="mi rv">
+          <div class="mi-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M6 11a6 6 0 0 0 12 0M12 17v4M9 21h6"/></svg></div>
+          <h3>פייטן וקלידן</h3>
+          <p>שירה, פיוטים וריקודים לאורך כל הערב</p>
+        </div>
+        <div class="mi-sep" aria-hidden="true"><svg><use href="#lozenge"/></svg></div>
+        <div class="mi rv">
+          <div class="mi-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 13h16a8 8 0 0 1-16 0zM12 5v2M8 7.5l.8 1.5M16 7.5l-.8 1.5"/><path d="M3 20h18"/></svg></div>
+          <h3>סעודה חגיגית</h3>
+          <p>שולחנות ערוכים לכל הקהל</p>
+        </div>
+        <div class="mi-sep" aria-hidden="true"><svg><use href="#lozenge"/></svg></div>
+        <div class="mi rv">
+          <div class="mi-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21h16M5 21v-7h14v7M5 17c2 1 3-1 4.7 0s3 1 4.6 0 2.7-1 4.7 0M12 14v-3M8 14v-2.5M16 14v-2.5"/><path d="M12 8.5c-1 0-1.5-.8-1.5-1.6S12 4 12 4s1.5 2.1 1.5 2.9-.5 1.6-1.5 1.6z"/></svg></div>
+          <h3>חגיגת יום ההולדת לרב שניר</h3>
+          <p>ברכות, שירה ושמחה עם כל תלמידי השיעור</p>
+        </div>
+        <p class="menu-end">בית כנסת שבטי ישראל · קהילת אור לישראל</p>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="h-prev">
+    <div class="head">
+      <div class="caps">רגעים</div>
+      <h2 id="h-prev">מהערב הקודם</h2>
+      <div class="rule" aria-hidden="true"><svg><use href="#lozenge"/></svg></div>
     </div>
     <div class="rv vids">
       <div class="vid"><div class="box"><video src="media/dance1.mp4?v=2" poster="media/dance1.jpg?v=2" autoplay muted loop playsinline preload="metadata"></video><button type="button" class="js-sound" aria-label="הפעלת קול"></button></div></div>
       <div class="vid"><div class="box"><video src="media/dance2.mp4?v=2" poster="media/dance2.jpg?v=2" autoplay muted loop playsinline preload="metadata"></video><button type="button" class="js-sound" aria-label="הפעלת קול"></button></div></div>
     </div>
-    <p class="vcap">מהערב הקודם</p>
-    <div class="rv more">
-      <ul>
-        <li><h4>חגיגת יום הולדת לרב</h4><span>ברכות ושמחה עם תלמידי השיעור</span></li>
-        <li><h4>דבר תורה</h4><span>לכבוד השיעור והקהילה</span></li>
-      </ul>
+    <div class="rv photos">
+      <figure class="wide"><div><img src="media/hall.jpg?v=2" alt="האולם מלא בקהל סביב השולחנות" loading="lazy"></div></figure>
+      <figure><div><img src="media/rav.jpg?v=2" alt="הרב עומד ומדבר אל הקהל" loading="lazy"></div></figure>
+      <figure><div><img src="media/table.jpg?v=2" alt="שולחן הרבנים ערוך לסעודה" loading="lazy"></div></figure>
     </div>
-  </section>
-
-  <section class="honour rv" aria-labelledby="h-honour">
-    <span class="caps">ביקור מיוחד בקהילה</span>
-    <div class="plate">
-      <span class="caps">אורח הכבוד</span>
-      <h2 id="h-honour" class="foil">הרב יוסף חיים בצרי</h2>
-      <small>שליט״א</small>
-    </div>
-    <p>זכות גדולה לקהילה ולתלמידי השיעור: הרב בצרי יכבד את הערב בנוכחותו.</p>
-    <div class="rule" aria-hidden="true"><svg><use href="#lozenge"/></svg></div>
   </section>
 
   <section class="rv" aria-label="ספירה לאחור">
@@ -345,19 +382,6 @@ footer .btn{margin-top:22px}
       <div><b id="cd-s">--</b><span>שניות</span></div>
     </div>
     <p class="count-note" id="count-note">עד שמתחילים לחגוג</p>
-  </section>
-
-  <section aria-labelledby="h-prev">
-    <div class="head">
-      <div class="caps">רגעים</div>
-      <h2 id="h-prev">מהערב הקודם</h2>
-      <div class="rule" aria-hidden="true"><svg><use href="#lozenge"/></svg></div>
-    </div>
-    <div class="rv photos">
-      <figure class="wide"><div><img src="media/hall.jpg?v=2" alt="האולם מלא בקהל סביב השולחנות" loading="lazy"></div></figure>
-      <figure><div><img src="media/rav.jpg?v=2" alt="הרב עומד ומדבר אל הקהל" loading="lazy"></div></figure>
-      <figure><div><img src="media/table.jpg?v=2" alt="שולחן הרבנים ערוך לסעודה" loading="lazy"></div></figure>
-    </div>
   </section>
 
   <section id="register" class="reg frame rv" aria-labelledby="h-reg">
