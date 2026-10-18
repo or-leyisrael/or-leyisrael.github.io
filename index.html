@@ -9,7 +9,7 @@
 <meta property="og:title" content="הילולת השיעור · וחגיגת יום ההולדת לרב שניר שיטרית">
 <meta property="og:description" content="בנוכחות הרב יוסף חיים בצרי שליט״א · יום חמישי כ״ו בחשוון · 05.11 · 19:30 · בית כנסת שבטי ישראל">
 <meta property="og:url" content="https://or-leyisrael.github.io/">
-<meta property="og:image" content="https://or-leyisrael.github.io/media/og.jpg">
+<meta property="og:image" content="https://or-leyisrael.github.io/media/og.jpg?v=2">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
@@ -128,6 +128,14 @@ section{margin-top:56px}
 .more h4{font-size:20px}
 .more span{font-size:14px;color:var(--ink-mute);text-align:left}
 
+/* hero portrait of Rav Snir */
+.arch.arch-sm{width:min(200px,56%);margin:22px auto 0}
+.arch-sm::after{height:55%}
+.arch-sm .arch-in{aspect-ratio:3/5}
+.arch-in img.fit{width:91%;left:9%;transform:none;
+  -webkit-mask-image:linear-gradient(to left,transparent 0,#000 7%),linear-gradient(180deg,#000 80%,transparent 100%);-webkit-mask-composite:source-in;
+  mask-image:linear-gradient(to left,transparent 0,#000 7%),linear-gradient(180deg,#000 80%,transparent 100%);mask-composite:intersect}
+
 /* guest of honour: arched window portrait */
 .honour{text-align:center}
 .honour > .caps{display:block}
@@ -242,6 +250,7 @@ footer .btn{margin-top:22px}
       <div class="bsd">בס״ד</div>
       <div class="caps rise">קהילת אור לישראל · בית כנסת שבטי ישראל</div>
       <h1 class="title foil rise d1">הילולת השיעור</h1>
+      <div class="arch arch-sm rise d2"><div class="arch-in"><img class="fit" src="media/snir.webp" alt="הרב שניר שיטרית שליט״א" width="305" height="548"></div></div>
       <p class="sub rise d2">וחגיגת יום ההולדת<br>לרב <b>שניר שיטרית</b><small>שליט״א</small></p>
 
       <div class="rule rise d3" aria-hidden="true"><svg><use href="#lozenge"/></svg></div>
