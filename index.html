@@ -405,6 +405,7 @@ footer .btn{margin-top:22px}
           <p>ההשתתפות מכסה את עלויות הערב: הסעודה, הפייטן והקלידן. כל סכום מעל המינימום יעזור לנו לשדרג את הערב לכבוד הרב.</p>
           <a class="btn btn-gold js-bit" id="bit-btn" href="#register" target="_blank" rel="noopener">לתשלום בביט</a>
           <p class="fine">אפשר לשלם עד 16.11</p>
+          <p class="kind"><b>מתחת לגיל 18?</b> פטורים מתשלום. רק נרשמים בצעד 2.</p>
         </div>
       </div>
 
@@ -423,8 +424,9 @@ footer .btn{margin-top:22px}
               <input id="reg-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="050-000-0000">
               <div class="err" id="err-phone"></div>
             </div>
-            <div class="choice">
-              <label class="opt" for="pay-yes"><input type="checkbox" name="pay" id="pay-yes" value="paid"><span><b>שילמתי בביט</b><small>תודה רבה, זה עוזר מאוד</small></span></label>
+            <div class="choice" role="radiogroup" aria-label="תשלום">
+              <label class="opt" for="pay-yes"><input type="radio" name="pay" id="pay-yes" value="paid"><span><b>שילמתי בביט</b><small>תודה רבה, זה עוזר מאוד</small></span></label>
+              <label class="opt" for="pay-minor"><input type="radio" name="pay" id="pay-minor" value="minor"><span><b>מתחת לגיל 18</b><small>פטור מתשלום</small></span></label>
             </div>
             <div class="err" id="err-pay"></div>
             <button class="btn btn-navy" type="submit">סיום הרשמה</button>
@@ -522,14 +524,14 @@ footer .btn{margin-top:22px}
     ["err-name","err-phone","err-pay"].forEach(function(id){ document.getElementById(id).textContent = ""; });
     if (name.length < 2) { document.getElementById("err-name").textContent = "נא לכתוב שם."; ok = false; }
     if (digits.length < 9 || digits.length > 12) { document.getElementById("err-phone").textContent = "נא לכתוב מספר טלפון מלא, לדוגמה 050-123-4567."; ok = false; }
-    if (!pay) { document.getElementById("err-pay").textContent = "ההרשמה נקלטת אחרי תשלום. משלמים בביט בצעד 1 ומסמנים כאן."; ok = false; }
+    if (!pay) { document.getElementById("err-pay").textContent = "נא לסמן ששילמתם בביט, או שאתם מתחת לגיל 18."; ok = false; }
     if (!ok) return;
     var btn = this.querySelector('button[type="submit"]');
     btn.disabled = true; btn.textContent = "שולח...";
     var body = new URLSearchParams();
     body.append("entry.1192817143", name);
     body.append("entry.896095197", phone);
-    body.append("entry.184176237", "שילמתי בביט");
+    body.append("entry.184176237", pay.value === "minor" ? "מתחת לגיל 18 (פטור מתשלום)" : "שילמתי בביט");
     var form = this, done = document.getElementById("reg-done");
     fetch(FORM_URL, {method:"POST", mode:"no-cors", body: body}).then(function(){
       form.hidden = true; done.hidden = false; done.focus();
